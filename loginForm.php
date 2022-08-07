@@ -1,9 +1,26 @@
 <?php
  include('header.php');
  include('user.php');
+
+// if(!(User::is_regestred())){
+//     header('location: registration.php');
+    
+
+// }
  if((User::is_logged_in())){
     header('location: login.php');
  }
+ 
+ if($_SERVER['REQUEST_METHOD']=='POST'){
+
+       
+     $name = $_POST['name'];
+     $email= $_POST['email'];
+     $password=$_POST['password'];
+     $phone= $_POST['phone'];
+     User::registrationData($name,$email,$password,$phone);
+ }
+ 
 ?>
 
     <form class="form" action="_logging.php" method="POST" autocomplete="off">
@@ -19,6 +36,7 @@
         </div>
         <div class="form-button">
             <input type="submit" class="button" value="Log in">
+            <a href="__registration_backend.php" class="button">Go to Registration</a>
 
         </div>
 

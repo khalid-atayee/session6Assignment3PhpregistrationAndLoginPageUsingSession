@@ -1,5 +1,11 @@
-<?php include ('header.php');?>
-<form class="form" action="_logging.php" method="POST" autocomplete="off">
+<?php include ('header.php'); include ('user.php');
+// if(User::is_regestred()){
+//     header('location: loginForm.php');
+// }
+
+
+?>
+<form class="form" action="loginForm.php" method="POST" autocomplete="off">
         <h2>Welcome to Registration Page</h2>
         <div class="form-control">
         <label for="name">Enter your name</label><br>
